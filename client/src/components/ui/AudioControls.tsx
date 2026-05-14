@@ -30,17 +30,16 @@ export default function AudioControls() {
 
   return (
     <div
-      className="retro-audio-controls"
       style={{
         position: "fixed",
-        bottom: "clamp(12px, 3vw, 24px)",
-        right: "clamp(8px, 3vw, 24px)",
+        bottom: "24px",
+        right: "24px",
         zIndex: 1000,
         display: "flex",
         alignItems: "center",
         background: "rgba(30,30,30,0.85)",
         borderRadius: "8px",
-        padding: "clamp(6px, 2vw, 8px) clamp(8px, 2vw, 12px)"
+        padding: "8px 12px"
       }}
     >
       {/* ...your audio toggle button code... */}
