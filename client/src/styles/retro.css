@@ -666,34 +666,491 @@
   z-index: 1000;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
+/* =================================
+   RESPONSIVE DESIGN - ALL DEVICES
+   ================================= */
+
+/* DESKTOP/LAPTOP (1024px and above) */
+@media (min-width: 1024px) {
   .retro-status-bar {
-    flex-direction: column;
-    gap: 5px;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    flex-direction: row;
+    gap: 20px;
   }
-  
+
+  .navigation-ui {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    bottom: auto;
+    transform: translateY(-50%);
+    z-index: 100;
+    pointer-events: auto;
+  }
+
+  .retro-instructions {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .retro-portfolio-2d {
+    padding: 20px;
+  }
+
+  .retro-sections-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .content-window {
+    max-width: 420px;
+  }
+}
+
+/* TABLET (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .retro-status-bar {
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    flex-direction: row;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 10px 12px;
+  }
+
+  .retro-status-bar > * {
+    white-space: nowrap;
+    min-width: fit-content;
+    font-size: 11px !important;
+  }
+
   .navigation-ui {
     position: fixed;
     bottom: 20px;
     right: 20px;
     top: auto;
     transform: none;
+    z-index: 100;
   }
-  
+
+  .nav-section {
+    padding: 10px;
+  }
+
+  .nav-buttons {
+    gap: 8px;
+  }
+
+  .nav-button {
+    padding: 6px 10px;
+    font-size: 10px !important;
+  }
+
   .retro-instructions {
-    bottom: 120px;
+    position: absolute;
+    bottom: 20px;
+    left: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 10px !important;
+    padding: 8px;
   }
 
   .retro-portfolio-2d {
-    padding: 10px;
+    padding: 12px;
+  }
+
+  .retro-sections-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .content-window {
+    max-width: 100%;
+  }
+
+  .window-content {
+    min-height: 150px;
+    padding: 15px;
+  }
+}
+
+/* LARGE MOBILE (481px - 767px) */
+@media (min-width: 481px) and (max-width: 767px) {
+  .retro-status-bar {
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    flex-direction: column;
+    gap: 6px;
+    padding: 8px 10px;
+    border-width: 1px;
+    font-size: 9px !important;
+  }
+
+  .retro-status-bar > * {
+    font-size: 9px !important;
+  }
+
+  .navigation-ui {
+    position: fixed;
+    bottom: 60px;
+    right: 10px;
+    top: auto;
+    transform: none;
+    z-index: 100;
+  }
+
+  .nav-section {
+    padding: 8px;
+    border-width: 1px;
+  }
+
+  .nav-section > * {
+    font-size: 8px !important;
+  }
+
+  .nav-buttons {
+    gap: 6px;
+    margin-top: 6px;
+  }
+
+  .nav-button {
+    padding: 5px 8px;
+    border-width: 1px;
+    font-size: 8px !important;
+  }
+
+  .retro-instructions {
+    position: absolute;
+    bottom: 60px;
+    left: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    font-size: 8px !important;
+    padding: 6px;
+    border-width: 1px;
+  }
+
+  .retro-instructions > * {
+    font-size: 8px !important;
+  }
+
+  .retro-portfolio-2d {
+    padding: 8px;
   }
 
   .retro-sections-grid {
     grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .retro-section-card {
+    margin-bottom: 5px;
   }
 
   .content-window {
-    margin: 0 10px;
+    max-width: 100%;
+  }
+
+  .window-header {
+    padding: 8px;
+    font-size: 8px !important;
+  }
+
+  .window-content {
+    min-height: 120px;
+    padding: 12px;
+    font-size: 8px !important;
+  }
+
+  .section-pixel-art {
+    font-size: 16px;
+    margin-top: 8px;
+  }
+}
+
+/* SMALL MOBILE (320px - 480px) */
+@media (max-width: 480px) {
+  body {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+  }
+
+  .app-container {
+    width: 100%;
+    height: auto;
+  }
+
+  .retro-status-bar {
+    top: 8px;
+    left: 8px;
+    right: 8px;
+    flex-direction: column;
+    gap: 4px;
+    padding: 6px 8px;
+    border-width: 1px;
+    font-size: 7px !important;
+    line-height: 1.2;
+  }
+
+  .retro-status-bar > * {
+    font-size: 7px !important;
+    line-height: 1.2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .navigation-ui {
+    position: fixed;
+    bottom: 50px;
+    right: 8px;
+    left: auto;
+    top: auto;
+    transform: none;
+    z-index: 100;
+    width: auto;
+  }
+
+  .nav-section {
+    padding: 6px;
+    border-width: 1px;
+    min-width: fit-content;
+  }
+
+  .nav-section > * {
+    font-size: 7px !important;
+  }
+
+  .nav-buttons {
+    gap: 4px;
+    margin-top: 4px;
+  }
+
+  .nav-button {
+    padding: 4px 6px;
+    border-width: 1px;
+    font-size: 7px !important;
+    white-space: nowrap;
+  }
+
+  .retro-instructions {
+    position: fixed;
+    bottom: 50px;
+    left: 8px;
+    right: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    font-size: 7px !important;
+    padding: 5px;
+    border-width: 1px;
+    max-width: calc(50px);
+    line-height: 1;
+  }
+
+  .retro-instructions > * {
+    font-size: 7px !important;
+    line-height: 1;
+  }
+
+  .retro-portfolio-2d {
+    padding: 6px;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .retro-header {
+    padding: 12px;
+    border-width: 1px;
+    margin-bottom: 15px;
+  }
+
+  .retro-header > * {
+    font-size: 8px !important;
+  }
+
+  .retro-sections-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+
+  .retro-section-card {
+    margin-bottom: 3px;
+  }
+
+  .section-border {
+    padding: 12px;
+    border-width: 1px;
+  }
+
+  .section-pixel-art {
+    font-size: 12px;
+    margin-top: 6px;
+  }
+
+  .retro-content-display {
+    flex: 1;
+    padding-bottom: 10px;
+  }
+
+  .content-window {
+    max-width: 100%;
+    border-width: 1px;
+  }
+
+  .window-header {
+    padding: 6px;
+    font-size: 7px !important;
+  }
+
+  .window-content {
+    min-height: 100px;
+    padding: 10px;
+    font-size: 7px !important;
+    line-height: 1.4;
+  }
+
+  .retro-status-footer {
+    padding: 10px;
+    border-width: 1px;
+    font-size: 7px !important;
+    margin-top: 10px;
+  }
+
+  .retro-audio-controls {
+    position: fixed;
+    bottom: 12px;
+    right: 8px;
+    z-index: 999;
+    font-size: 8px !important;
+  }
+
+  .audio-main-button {
+    padding: 6px 8px;
+    font-size: 7px !important;
+    gap: 4px;
+    min-width: 80px;
+  }
+
+  .audio-icon {
+    font-size: 12px;
+  }
+
+  .audio-details {
+    font-size: 8px !important;
+    min-width: 140px;
+    padding: 8px;
+    right: 0;
+  }
+
+  .audio-label {
+    font-size: 8px !important;
+    margin-bottom: 6px;
+  }
+
+  .audio-info {
+    font-size: 7px !important;
+    margin: 3px 0;
+  }
+
+  .audio-hint {
+    font-size: 7px !important;
+    margin-top: 6px;
+  }
+
+  .retro-button {
+    padding: 8px 12px;
+    font-size: 7px !important;
+    letter-spacing: 0.5px;
+    border-width: 1px;
+  }
+
+  .retro-button:hover {
+    transform: translateY(-1px);
+  }
+
+  .retro-spinner {
+    width: 30px;
+    height: 30px;
+    border: 2px solid #333;
+    border-top: 2px solid var(--retro-green);
+  }
+
+  .webgl-error-message {
+    padding: 20px;
+    border-width: 2px;
+    font-size: 7px !important;
+  }
+
+  /* Hide scrollbar on mobile for cleaner look */
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--retro-green);
+    border-radius: 0;
+  }
+
+  /* CRT Effect adjustments */
+  .crt-scanlines {
+    background: repeating-linear-gradient(0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 255, 65, 0.02) 2px,
+      rgba(0, 255, 65, 0.02) 3px);
+  }
+
+  /* Reduce matrix rain on mobile for performance */
+  .matrix-column {
+    font-size: 10px;
+    line-height: 10px;
+  }
+}
+
+/* VERY SMALL MOBILE - Landscape mode (320px - 480px height) */
+@media (max-height: 500px) {
+  .retro-status-bar {
+    top: 4px;
+    padding: 4px 6px;
+    font-size: 6px !important;
+    gap: 2px;
+  }
+
+  .navigation-ui {
+    bottom: 40px;
+    right: 6px;
+  }
+
+  .nav-section {
+    padding: 4px;
+  }
+
+  .nav-button {
+    padding: 3px 5px;
+    font-size: 6px !important;
+  }
+
+  .retro-instructions {
+    bottom: 40px;
+    left: 6px;
+    font-size: 6px !important;
+    padding: 4px;
+  }
+
+  .retro-audio-controls {
+    bottom: 8px;
+    right: 6px;
   }
 }
